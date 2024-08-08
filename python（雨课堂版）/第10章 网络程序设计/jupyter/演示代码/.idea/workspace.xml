@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="63bfa6bd-3b71-48e2-9d11-f93c979444e9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bC2Jgq1o5RSyZb1fSIubEoKPEX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/6_SQLite代理" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\我的坚果云\1_本科生培养\【本科生课程】python程序设计\ppt\我的教程2020（雨课堂版）\第10章 网络程序设计\jupyter\演示代码\3_嗅探器" />
+      <recent name="D:\我的坚果云\1_本科生培养\【本科生课程】python程序设计\ppt\我的教程2020（雨课堂版）\第10章 网络程序设计\jupyter\演示代码\1_UDP" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\我的坚果云\1_本科生培养\【本科生课程】python程序设计\ppt\我的教程2020（雨课堂版）\第10章 网络程序设计\jupyter\演示代码\6_SQLite代理" />
+      <recent name="D:\我的坚果云\1_本科生培养\【本科生课程】python程序设计\ppt\我的教程2020（雨课堂版）\第10章 网络程序设计\jupyter\演示代码\5_FTP" />
+      <recent name="D:\我的坚果云\1_本科生培养\【本科生课程】python程序设计\ppt\我的教程2020（雨课堂版）\第10章 网络程序设计\jupyter\演示代码\4_端口映射" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.sender">
+    <configuration name="读取网页内容" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="演示代码" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/读取网页内容.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ftpClient" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="演示代码" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/5_FTP" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/5_FTP/ftpClient.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ftpServer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="演示代码" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/5_FTP" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/5_FTP/ftpServer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="port_scan" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="演示代码" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\我的坚果云\1_本科生培养\【本科生课程】python程序设计\ppt\我的教程2020（雨课堂版）\第10章 网络程序设计\jupyter\演示代码\3_嗅探器\port_scan.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sender" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="演示代码" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/1_UDP" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/1_UDP/sender.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.sender" />
+        <item itemvalue="Python.读取网页内容" />
+        <item itemvalue="Python.ftpServer" />
+        <item itemvalue="Python.ftpClient" />
+        <item itemvalue="Python.port_scan" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63bfa6bd-3b71-48e2-9d11-f93c979444e9" name="Default Changelist" comment="" />
+      <created>1588121685442</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588121685442</updated>
+      <workItem from="1588121688685" duration="7177000" />
+      <workItem from="1588174733034" duration="5118000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom" timestamp="1588211304557">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040/1050.-768.1024.728@0.0.1920.1040" timestamp="1588176514300" />
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588211304557" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center" timestamp="1588211304557">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040/1050.-768.1024.728@0.0.1920.1040" timestamp="1588176514300" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588211304557" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left" timestamp="1588211304557">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040/1050.-768.1024.728@0.0.1920.1040" timestamp="1588176514300" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588211304557" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right" timestamp="1588211304557">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040/1050.-768.1024.728@0.0.1920.1040" timestamp="1588176514300" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588211304557" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1588121733386">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588121733386" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1588174818226">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1050.-768.1024.728@0.0.1920.1040" timestamp="1588174818226" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588121689045" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/$sender.coverage" NAME="sender Coverage Results" MODIFIED="1588208768193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/1_UDP" />
+    <SUITE FILE_PATH="coverage/$chatserver.coverage" NAME="chatserver Coverage Results" MODIFIED="1588125204657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_TCP" />
+    <SUITE FILE_PATH="coverage/$ftpClient.coverage" NAME="ftpClient Coverage Results" MODIFIED="1588174911847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/5_FTP" />
+    <SUITE FILE_PATH="coverage/$receiver.coverage" NAME="receiver Coverage Results" MODIFIED="1588121887050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/$.coverage" NAME="读取网页内容 Coverage Results" MODIFIED="1588176514284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/$port_scan.coverage" NAME="port_scan Coverage Results" MODIFIED="1588148666867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/$chatclient.coverage" NAME="chatclient Coverage Results" MODIFIED="1588125179704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2_TCP" />
+    <SUITE FILE_PATH="coverage/$ftpServer.coverage" NAME="ftpServer Coverage Results" MODIFIED="1588175263823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/5_FTP" />
+  </component>
+</project>

@@ -1,0 +1,1 @@
+def linear(a, b):    def result(x):        return a * x + b    return resulttaxes=linear(0.3,2)s=taxes(5)print(s)

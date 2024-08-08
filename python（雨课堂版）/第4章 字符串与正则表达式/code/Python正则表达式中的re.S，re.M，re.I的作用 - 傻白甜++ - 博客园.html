@@ -1,0 +1,550 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0052)https://www.cnblogs.com/feifeifeisir/p/10627474.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="origin">
+    <title>Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园</title>
+<meta property="og:description" content="正则表达式可以包含一些可选标志修饰符来控制匹配的模式。修饰符被指定为一个可选的标志。多个标志可以通过按位 OR(|) 它们来指定。如 re.I | re.M 被设置成 I 和 M 标志： re.S 在">
+    <link type="text/css" rel="stylesheet" href="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/bundle-darkgreentrip.css">
+<link type="text/css" rel="stylesheet" href="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/449145.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/bundle-darkgreentrip-mobile.css">
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/feifeifeisir/rss">
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/feifeifeisir/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/feifeifeisir/wlwmanifest.xml">
+    <script src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/amp4ads-host-v0.js.下载"></script><script src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/pubads_impl_rendering_2019041101.js.下载"></script><script async="" src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/analytics.js.下载"></script><script src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+    <script>var currentBlogId=449145;var currentBlogApp='feifeifeisir',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+<link rel="preload" href="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/f.txt" as="script"><script type="text/javascript" src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/f.txt"></script><script src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/pubads_impl_2019041101.js.下载" async=""></script><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html"></head>
+<body>
+<a name="top"></a>
+
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/feifeifeisir/"><img id="blogLogo" src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/feifeifeisir/">bobby</a></h1>
+<h2>东方之东有日出，西方之西有海洋，东方西方漫游的渴望，再也不容许我彷徨。</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/feifeifeisir/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E5%82%BB%E7%99%BD%E7%94%9C%2B%2B">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/feifeifeisir/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/feifeifeisir/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 190&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 1</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        <div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/feifeifeisir/p/10627474.html">Python正则表达式中的re.S，re.M，re.I的作用</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p>正则表达式可以包含一些可选标志修饰符来控制匹配的模式。修饰符被指定为一个可选的标志。多个标志可以通过按位 OR(|) 它们来指定。如 re.I | re.M 被设置成 I 和 M 标志：</p>
+<table class="reference">
+<tbody>
+<tr><th>修饰符</th><th>描述</th></tr>
+<tr>
+<td>re.I</td>
+<td>使匹配对大小写不敏感</td>
+</tr>
+<tr>
+<td>re.L</td>
+<td>做本地化识别（locale-aware）匹配</td>
+</tr>
+<tr>
+<td>re.M</td>
+<td>多行匹配，影响 ^ 和 $</td>
+</tr>
+<tr>
+<td>re.S</td>
+<td>使 . 匹配包括换行在内的所有字符</td>
+</tr>
+<tr>
+<td>re.U</td>
+<td>根据Unicode字符集解析字符。这个标志影响 \w, \W, \b, \B.</td>
+</tr>
+<tr>
+<td>re.X</td>
+<td>该标志通过给予你更灵活的格式以便你将正则表达式写得更易于理解。</td>
+</tr>
+</tbody>
+</table>
+<h3>re.S</h3>
+<p>在Python的正则表达式中，有一个参数为re.S。它表示 “.” 的作用扩展到整个字符串，包括“\n”。看如下代码：</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_143971" class="syntaxhighlighter  python"><div class="toolbar"><span><a href="https://www.cnblogs.com/feifeifeisir/p/10627474.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="python keyword">import</code> <code class="python plain">re</code></div><div class="line number2 index1 alt1"><code class="python plain">a </code><code class="python keyword">=</code> <code class="python comments">'''asdfhellopass:</code></div><div class="line number3 index2 alt2"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python comments">worldaf</code></div><div class="line number4 index3 alt1"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python comments">'''</code></div><div class="line number5 index4 alt2"><code class="python plain">b </code><code class="python keyword">=</code> <code class="python plain">re.findall(</code><code class="python string">'hello(.*?)world'</code><code class="python plain">,a)</code></div><div class="line number6 index5 alt1"><code class="python plain">c </code><code class="python keyword">=</code> <code class="python plain">re.findall(</code><code class="python string">'hello(.*?)world'</code><code class="python plain">,a,re.S)</code></div><div class="line number7 index6 alt2"><code class="python functions">print</code> <code class="python string">'b is '</code> <code class="python plain">, b</code></div><div class="line number8 index7 alt1"><code class="python functions">print</code> <code class="python string">'c is '</code> <code class="python plain">, c</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>　　</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_16949" class="syntaxhighlighter  python"><div class="toolbar"><span><a href="https://www.cnblogs.com/feifeifeisir/p/10627474.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="python plain">运行结果：</code></div><div class="line number2 index1 alt1"><code class="python plain">b </code><code class="python keyword">is</code>&nbsp; <code class="python plain">[]</code></div><div class="line number3 index2 alt2"><code class="python plain">c </code><code class="python keyword">is</code>&nbsp; <code class="python plain">[</code><code class="python string">'pass:\n\t123\n\t'</code><code class="python plain">]</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>　　正则表达式中，“.”的作用是匹配除“\n”以外的任何字符，也就是说，它是在一行中进行匹配。这里的“行”是以“\n”进行区分的。a字符串有每行的末尾有一个“\n”，不过它不可见。</p>
+<p>如果不使用re.S参数，则只在每一行内进行匹配，如果一行没有，就换下一行重新开始，不会跨行。而使用re.S参数以后，正则表达式会将这个字符串作为一个整体，将“\n”当做一个普通的字符加入到这个字符串中，在整体中进行匹配。</p>
+<h3>re.I</h3>
+<p>　　不区分大小写</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_31487" class="syntaxhighlighter  python"><div class="toolbar"><span><a href="https://www.cnblogs.com/feifeifeisir/p/10627474.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="python plain">res </code><code class="python keyword">=</code> <code class="python plain">re.findall(r</code><code class="python string">"A"</code><code class="python plain">, </code><code class="python string">"abc"</code><code class="python plain">, re.I)</code></div><div class="line number2 index1 alt1"><code class="python functions">print</code><code class="python plain">(res)</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="python plain">运行结果：[</code><code class="python string">'a'</code><code class="python plain">]</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<h3>re.M</h3>
+<p>　　将所有行的尾字母输出</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_160941" class="syntaxhighlighter  python"><div class="toolbar"><span><a href="https://www.cnblogs.com/feifeifeisir/p/10627474.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="python plain">&gt;&gt;&gt; s</code><code class="python keyword">=</code> <code class="python string">'12 34/n56 78/n90'</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="python plain">&gt;&gt;&gt; re.findall( r</code><code class="python string">'^/d+'</code> <code class="python plain">, s , re.M )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="python comments"># 匹配位于行首的数字</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="python plain">[</code><code class="python string">'12'</code><code class="python plain">, </code><code class="python string">'56'</code><code class="python plain">, </code><code class="python string">'90'</code><code class="python plain">]</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="python plain">&gt;&gt;&gt; re.findall( r’</code><code class="python keyword">/</code><code class="python plain">A</code><code class="python keyword">/</code><code class="python plain">d</code><code class="python keyword">+</code><code class="python plain">’, s , re.M )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="python comments"># 匹配位于字符串开头的数字</code></div><div class="line number8 index7 alt1">&nbsp;</div><div class="line number9 index8 alt2"><code class="python plain">[</code><code class="python string">'12'</code><code class="python plain">]</code></div><div class="line number10 index9 alt1">&nbsp;</div><div class="line number11 index10 alt2"><code class="python plain">&gt;&gt;&gt; re.findall( r</code><code class="python string">'/d+$'</code> <code class="python plain">, s , re.M )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="python comments"># 匹配位于行尾的数字</code></div><div class="line number12 index11 alt1">&nbsp;</div><div class="line number13 index12 alt2"><code class="python plain">[</code><code class="python string">'34'</code><code class="python plain">, </code><code class="python string">'78'</code><code class="python plain">, </code><code class="python string">'90'</code><code class="python plain">]</code></div><div class="line number14 index13 alt1">&nbsp;</div><div class="line number15 index14 alt2"><code class="python plain">&gt;&gt;&gt; re.findall( r’</code><code class="python keyword">/</code><code class="python plain">d</code><code class="python keyword">+</code><code class="python keyword">/</code><code class="python plain">Z’ , s , re.M )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="python comments"># 匹配位于字符串尾的数字</code></div><div class="line number16 index15 alt1">&nbsp;</div><div class="line number17 index16 alt2"><code class="python plain">[</code><code class="python string">'90'</code><code class="python plain">]</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>　　</p>
+<h3>re.sub</h3>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_725633" class="syntaxhighlighter  python"><div class="toolbar"><span><a href="https://www.cnblogs.com/feifeifeisir/p/10627474.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="python comments"># 要求结果：['12', '23', '34']</code></div><div class="line number2 index1 alt1"><code class="python plain">l </code><code class="python keyword">=</code> <code class="python plain">[</code><code class="python string">'1 2 '</code><code class="python plain">, </code><code class="python string">'2&nbsp;&nbsp; 3'</code><code class="python plain">, </code><code class="python string">'&nbsp; 3 4'</code><code class="python plain">]</code></div><div class="line number3 index2 alt2"><code class="python keyword">import</code> <code class="python plain">re</code></div><div class="line number4 index3 alt1"><code class="python functions">print</code><code class="python plain">(</code><code class="python functions">eval</code><code class="python plain">(re.sub(r</code><code class="python string">'\s*'</code><code class="python plain">, '', </code><code class="python functions">str</code><code class="python plain">(l))))</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>　　</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="https://www.cnblogs.com/feifeifeisir/category/1291508.html" target="_blank">python函数</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(10627474,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;181f30bc-99ea-4219-a40d-08d5f41f23fc&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/feifeifeisir/" target="_blank"><img src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/20190228212754.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/feifeifeisir/">傻白甜++</a><br>
+            <a href="http://home.cnblogs.com/u/feifeifeisir/followees">关注 - 24</a><br>
+            <a href="http://home.cnblogs.com/u/feifeifeisir/followers">粉丝 - 5</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;181f30bc-99ea-4219-a40d-08d5f41f23fc&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(10627474,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(10627474,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="https://www.cnblogs.com/feifeifeisir/p/10626741.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/feifeifeisir/p/10626741.html" title="发布于2019-03-30 13:31">python eval()函数的妙用和滥用</a><br><a href="https://www.cnblogs.com/feifeifeisir/p/10627854.html" class="p_n_p_prefix">» </a> 下一篇：<a href="https://www.cnblogs.com/feifeifeisir/p/10627854.html" title="发布于2019-03-30 16:16">Python标准库--inspect</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2019-03-30 15:23</span> <a href="https://www.cnblogs.com/feifeifeisir/">傻白甜++</a> 阅读(<span id="post_view_count">128</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=10627474" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/feifeifeisir/p/10627474.html#" onclick="AddToWz(10627474);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=449145,cb_entryId=10627474,cb_blogApp=currentBlogApp,cb_blogUserGuid='181f30bc-99ea-4219-a40d-08d5f41f23fc',cb_entryCreatedDate='2019/3/30 15:23:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=false;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/feifeifeisir/p/10627474.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/feifeifeisir/p/10627474.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-工控&#39;)">【推荐】超50万C++/C#源码: 大型实时仿真组态图形源码</a><br><a href="https://gitee.com/enterprises?from=bky-2" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-gitee&#39;)">【推荐】专业便捷的企业级代码托管服务 - Gitee 码云</a><br><a href="https://cloud.tencent.com/redirect.php?redirect=1014&amp;cps_key=285f996e1cd76decfb796e3eb6d1723b&amp;from=console" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-腾讯云&#39;)">【推荐】云服务器、云数据库特惠，服务更稳，速度更快，价格更优</a><br><a href="https://www.bagevent.com/event/2468856" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-GAITC&#39;)">【活动】2019第四届全球人工技术大会解码“智能+时代”</a><br></div>
+<div id="opt_under_post"></div>
+<script async="async" src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/gpt.js.下载"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id="cnblogs_c1" class="c_ad_block">
+    <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;" data-google-query-id="COmYgdyW1uECFRIklgod5f8Awg"><div id="google_ads_iframe_/1090369/C1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C1_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C1_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-google-container-id="1" data-load-complete="true" src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/saved_resource.html"></iframe></div></div>
+</div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>相关博文：</b><br>·  <a href="https://www.cnblogs.com/dreamer-fish/p/5282679.html" target="_blank" onclick="clickRecomItmem(5282679)">Python中的正则表达式(re)</a><br>·  <a href="https://www.cnblogs.com/lotus2014/p/3823828.html" target="_blank" onclick="clickRecomItmem(3823828)">python -- re</a><br>·  <a href="https://www.cnblogs.com/papapython/p/7482349.html" target="_blank" onclick="clickRecomItmem(7482349)">python的re模块理解（re.compile、re.match、re.search）</a><br>·  <a href="https://www.cnblogs.com/dancesir/p/9771028.html" target="_blank" onclick="clickRecomItmem(9771028)">Python正则表达式中的re.S的作用</a><br>·  <a href="https://www.cnblogs.com/z-joshua/p/9178485.html" target="_blank" onclick="clickRecomItmem(9178485)">PythonRE</a><br></div></div>
+<div id="cnblogs_c2" class="c_ad_block">
+    <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="COqYgdyW1uECFRIklgod5f8Awg"><div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C2_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-google-container-id="2" data-load-complete="true" src="./Python正则表达式中的re.S，re.M，re.I的作用 - 傻白甜++ - 博客园_files/saved_resource(1).html"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block"><b>最新新闻</b>：<br> ·  <a href="https://news.cnblogs.com/n/623917/" target="_blank">谷歌放弃开设实体旗舰零售店计划</a><br> ·  <a href="https://news.cnblogs.com/n/623916/" target="_blank">“基因魔剪”让癌症建模更准确高效</a><br> ·  <a href="https://news.cnblogs.com/n/623915/" target="_blank">“性侵案”女大学生提民事诉讼 刘强东京东均成被告</a><br> ·  <a href="https://news.cnblogs.com/n/623914/" target="_blank">不满支持论坛，安全人员连续公布三个 WordPress 插件漏洞</a><br> ·  <a href="https://news.cnblogs.com/n/623913/" target="_blank">三星推出500元手机 在中低端对抗华为小米</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news">
+
+
+
+    <title></title>
+
+
+    <div style="text-align: center; color: #ffffff;">
+        <canvas id="canvas" height="160" width="160">
+            您的浏览器不支持html5的canvas
+        </canvas>
+        <div style="height: 10px">
+        </div>
+        <div style="background-color: #0094ff;">
+            <div id="div1">13:45:7</div>
+            <div id="div2">星期三</div>
+        </div>
+    </div>
+    <script type="text/javascript">window['__document_write_ajax_callbacks__']['3']();</script><script type="text/javascript">window['__document_write_ajax_callbacks__']['1']();</script>
+
+<div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/feifeifeisir/">傻白甜++</a><br>园龄：<a href="https://home.cnblogs.com/u/feifeifeisir/" title="入园时间：2018-08-02">8个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/feifeifeisir/followers/">5</a><br>关注：<a href="https://home.cnblogs.com/u/feifeifeisir/followees/">24</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;181f30bc-99ea-4219-a40d-08d5f41f23fc&#39;)">+加关注</a></div><script type="text/javascript">window['__document_write_ajax_callbacks__']['4']();</script><script>window['__document_write_ajax_callbacks__']['2']();</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/03/01&#39;);return false;">&lt;</a></td><td align="center">2019年4月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/05/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td align="center"><a href="https://www.cnblogs.com/feifeifeisir/archive/2019/04/03.html"><u>3</u></a></td><td align="center">4</td><td align="center">5</td><td class="CalWeekendDay" align="center">6</td></tr><tr><td class="CalWeekendDay" align="center">7</td><td align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td class="CalWeekendDay" align="center">13</td></tr><tr><td class="CalWeekendDay" align="center">14</td><td align="center">15</td><td align="center">16</td><td class="CalTodayDay" align="center">17</td><td align="center">18</td><td align="center">19</td><td class="CalWeekendDay" align="center">20</td></tr><tr><td class="CalWeekendDay" align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td class="CalWeekendDay" align="center">27</td></tr><tr><td class="CalWeekendDay" align="center">28</td><td align="center">29</td><td align="center">30</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td></tr><tr><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td><td class="CalOtherMonthDay" align="center">10</td><td class="CalOtherMonthDay" align="center">11</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/feifeifeisir/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="https://www.cnblogs.com/feifeifeisir/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="https://www.cnblogs.com/feifeifeisir/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="https://www.cnblogs.com/feifeifeisir/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="https://www.cnblogs.com/feifeifeisir/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/feifeifeisir/tag/%E5%B0%8F%E7%94%9C%E7%94%9C/">小甜甜</a>(1)</li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="https://www.cnblogs.com/feifeifeisir/category/1421710.html">baidu-aip(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="https://www.cnblogs.com/feifeifeisir/category/1415850.html">FOLLOW ME(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="https://www.cnblogs.com/feifeifeisir/category/1404301.html">git(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="https://www.cnblogs.com/feifeifeisir/category/1372029.html">linux(38)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="https://www.cnblogs.com/feifeifeisir/category/1384636.html">mongodb(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="https://www.cnblogs.com/feifeifeisir/category/1324696.html">mysql(16)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="https://www.cnblogs.com/feifeifeisir/category/1286314.html">pyrhon模块(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="https://www.cnblogs.com/feifeifeisir/category/1324378.html">python--django(22)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="https://www.cnblogs.com/feifeifeisir/category/1291508.html">python函数(14)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="https://www.cnblogs.com/feifeifeisir/category/1421398.html">python框架--flask(17)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="https://www.cnblogs.com/feifeifeisir/category/1291588.html">python面向对象(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="https://www.cnblogs.com/feifeifeisir/category/1404206.html">python-其它(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="https://www.cnblogs.com/feifeifeisir/category/1291509.html">python数据类型(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="https://www.cnblogs.com/feifeifeisir/category/1299363.html">python网络编程(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_14" href="https://www.cnblogs.com/feifeifeisir/category/1406745.html">爬虫-spider(18)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_15" href="https://www.cnblogs.com/feifeifeisir/category/1308930.html">前端综合(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_16" href="https://www.cnblogs.com/feifeifeisir/category/1413044.html">数据分析(11)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="https://www.cnblogs.com/feifeifeisir/archive/2019/04.html">2019年4月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="https://www.cnblogs.com/feifeifeisir/archive/2019/03.html">2019年3月 (47)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="https://www.cnblogs.com/feifeifeisir/archive/2019/02.html">2019年2月 (21)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="https://www.cnblogs.com/feifeifeisir/archive/2019/01.html">2019年1月 (34)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="https://www.cnblogs.com/feifeifeisir/archive/2018/12.html">2018年12月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="https://www.cnblogs.com/feifeifeisir/archive/2018/11.html">2018年11月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="https://www.cnblogs.com/feifeifeisir/archive/2018/10.html">2018年10月 (30)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="https://www.cnblogs.com/feifeifeisir/archive/2018/09.html">2018年9月 (15)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="https://www.cnblogs.com/feifeifeisir/archive/2018/08.html">2018年8月 (21)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="https://www.cnblogs.com/feifeifeisir/archive/2017/08.html">2017年8月 (1)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/feifeifeisir/p/10511998.html#4230951">1. Re:Python面试题之Python面试题汇总</a></li>
+        <li class="recent_comment_body">厉害了</li>
+        <li class="recent_comment_author">--百鬼之主</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/feifeifeisir/p/9438033.html">1. 用for循环计算(1-3+5-7...99)的结果(两种方法)(610)</a></li><li><a href="https://www.cnblogs.com/feifeifeisir/p/9519282.html">2. python os模块常用命令(423)</a></li><li><a href="https://www.cnblogs.com/feifeifeisir/p/9599218.html">3. python2和python3的差异(368)</a></li><li><a href="https://www.cnblogs.com/feifeifeisir/p/9457061.html">4. 函数相关练习题(353)</a></li><li><a href="https://www.cnblogs.com/feifeifeisir/p/9483930.html">5. 递归函数,冒泡排序(250)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><iframe src=www.163.com ></iframe>
+
+<a href="https://www.cnblogs.com/feifeifeisir/p/10511998.html">1. Python面试题之Python面试题汇总(1)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap" style="display: none;">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<iframe src=www.zzu.edu.cn></iframe><div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2019 傻白甜++
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+<!--PageEndHtml Block Begin-->
+<script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("❤主人你最帅❤","❤你最有钱❤","❤漂亮姑娘都爱你❤");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<span id="back-to-top"><a href="https://www.cnblogs.com/feifeifeisir/p/10627474.html#top" style="color:#fff">TOP</a></span>
+<!--PageEndHtml Block End-->
+
+
+<script type="text/javascript">
+        window.onload = function () {
+            var canvas = document.getElementById("canvas");
+            var can = canvas.getContext("2d");
+            var radius = 80; //半径
+            var centre = [80, 80]; //中心点
+
+            setInterval(function () {
+                mydrawclock();
+
+            }, 1000);
+            //   mydrawclock();
+
+            function mydrawclock() {
+                //清空画布
+                can.clearRect(0, 0, 500, 500);
+                //钟的大小（圆）
+                can.fillStyle = "#ebf0eb";
+                can.beginPath();
+                can.arc(centre[0], centre[1], radius, 0, Math.PI * 2, true);
+                can.closePath();
+                can.fill();
+                //中心点
+                can.fillStyle = "#0094ff";
+                can.beginPath();
+                can.arc(centre[0], centre[1], 4, 0, Math.PI * 2, true);
+                can.closePath();
+                can.fill();
+                //画钟 宽度 度数 颜色 长度
+                function drawclock(w, d, c, l) {
+                    can.beginPath();
+                    can.strokeStyle = c;
+                    can.lineWidth = w;
+                    can.moveTo(centre[0], centre[1]);
+                    can.lineTo(centre[0] + (radius - l) * Math.cos(d), centre[1] + (radius - l) * Math.sin(d));
+                    can.stroke();
+                }
+
+                var date = new Date();
+                //因为画圆是从3点钟方向开始的 所以要减去
+                var hours = date.getHours();
+                var minutes = date.getMinutes();
+                var seconds = date.getSeconds();
+                var day = date.getDay();
+
+                drawclock(4, (hours - 3 + minutes / 60) * 30 * Math.PI / 180, "#0094ff", 33);
+                drawclock(3, (minutes - 15 + seconds / 60) * 6 * Math.PI / 180, "#0094ff", 22);
+                drawclock(2, (seconds - 15) * 6 * Math.PI / 180, "#0094ff", 1);
+
+                document.getElementById("div1").innerHTML = hours + ":" + minutes + ":" + seconds;
+
+                switch (day) {
+                    case 0:
+                        day = "星期天";
+                        break;
+                    case 1:
+                        day = "星期一";
+                        break;
+                    case 2:
+                        day = "星期二";
+                        break;
+                    case 3:
+                        day = "星期三";
+                        break;
+                    case 4:
+                        day = "星期四";
+                        break;
+                    case 5:
+                        day = "星期五";
+                        break;
+                    case 6:
+                        day = "星期六";
+                        break;
+                    default:
+                        break;
+                }
+
+                document.getElementById("div2").innerHTML = day; // "</br>" + day;
+                // centre[0], centre[1]
+                //画分钟刻度
+                for (var i = 0; i < 60; i++) {
+                    var angle = i * 6 * Math.PI / 180;
+                    can.strokeStyle = "red";
+                    can.beginPath();
+                    can.lineWidth = 1;
+                    can.moveTo(centre[0] + radius * Math.cos(angle), centre[1] + radius * Math.sin(angle));
+                    can.lineTo(centre[0] + (radius - 5) * Math.cos(angle), centre[1] + (radius - 5) * Math.sin(angle));
+                    can.stroke();
+                }
+                //画时钟刻度
+                for (var i = 0; i < 12; i++) {
+                    var angle = i * 30 * Math.PI / 180;
+                    can.strokeStyle = "#0094ff";
+                    can.lineWidth = 2;
+                    can.beginPath();
+                    can.moveTo(centre[0] + radius * Math.cos(angle), centre[1] + radius * Math.sin(angle));
+                    can.lineTo(centre[0] + (radius - 8) * Math.cos(angle), centre[1] + (radius - 8) * Math.sin(angle));
+                    can.stroke();
+                }
+            }
+
+
+        }
+    </script><script type="text/javascript">getFollowStatus('181f30bc-99ea-4219-a40d-08d5f41f23fc')</script></body></html>

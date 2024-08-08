@@ -1,0 +1,106 @@
+#cnblogs_post_body
+{
+    color: black;      
+    font: 0.875em/1.5em "微软雅黑" , "PTSans" , "Arial" ,sans-serif;
+    font-size: 15px;
+}
+#各个等级标题的颜色样式
+#cnblogs_post_body h1    {
+    background: #2B6695;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0 0 1px #5F5A4B, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+    color: #FFFFFF;
+    font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+    font-size: 23px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    margin: 18px 0 !important;
+    padding: 8px 0 5px 5px;
+    text-shadow: 2px 2px 3px #222222;
+}
+#cnblogs_post_body h2    {
+    background: #008eb7;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0 0 1px #5F5A4B, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+    color: #FFFFFF;
+    font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+    font-size: 20px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    margin: 18px 0 !important;
+    padding: 8px 0 5px 5px;
+    text-shadow: 2px 2px 3px #222222;
+}
+#cnblogs_post_body h3    {
+    background: #399ab2;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0 0 1px #5F5A4B, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+    color: #FFFFFF;
+    font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+    font-size: 18px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    margin: 18px 0 !important;
+    padding: 8px 0 5px 5px;
+    text-shadow: 2px 2px 3px #222222;
+}
+#cnblogs_post_body h4{
+    background: #2B6600;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0 0 1px #5F5A4B, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+    color: #FFFFFF;
+    font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+    font-size: 16px;
+    font-weight: bold;
+    height: 24px;
+    line-height: 23px;
+    margin: 12px 0 !important;
+    padding: 5px 0 5px 10px;
+    text-shadow: 2px 2px 3px #222222;
+}
+#页面中a标签鼠标位置
+#cnblogs_post_body h2:a{
+   color: rgb(235, 235, 235);
+}
+#cnblogs_post_body h2 a:hover{
+   color: rgb(255, 102, 0);
+}
+#页面中标题位置
+#cnblogs_post_body h1{
+   color: rgb(235, 235, 235);
+}
+#cnblogs_post_body h1:hover{
+   color: rgb(255, 102, 0);
+}
+#cnblogs_post_body h2{
+   color: rgb(235, 235, 235);
+}
+#cnblogs_post_body h2:hover{
+   color: rgb(255, 102, 0);
+}
+#cnblogs_post_body h3{
+   color: rgb(235, 235, 235);
+}
+#cnblogs_post_body h3:hover{
+   color: rgb(255, 102, 0);
+}
+#cnblogs_post_body h4{
+   color: rgb(235, 235, 235);
+}
+#cnblogs_post_body h4:hover{
+   color: rgb(255, 102, 0);
+}
+
+#back-to-top {
+    background-color: #00CD00;
+    bottom: 0;
+    box-shadow: 0 0 6px #00CD00;
+    color: #444444;
+    padding: 10px 10px;
+    position: fixed;
+    right: 50px;
+    cursor: pointer;
+}

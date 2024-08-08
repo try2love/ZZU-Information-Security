@@ -1,0 +1,1 @@
+def demo(newitem,old_list=[]):    old_list.append(newitem)    return old_listprint(demo('5',[1,2,3,4]))      #right#print(demo('aaa',['a','b']))    #rightprint(demo('a'))                #rightprint(demo('b'))                #wrongprint(demo('c'))
