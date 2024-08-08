@@ -1,0 +1,146 @@
+从头开始配置rsyslog服务器 客户端
+
+配置完server 和 client的ip后，可以使用远程工具连接虚拟机
+
+配置完ip和主机名
+
+关闭server和client防火墙 selinux 两个安全策略（其他linux相关实验也建议关闭，生产环境则需要配置两个规则，最大限度保证服务器安全）
+
+查看server和client的syslog软件是否安装
+
+
+服务器
+
+1、配置ip地址
+
+	配置完ip地址
+	修改主机名
+	关闭防火墙
+	关闭selinux
+
+	rpm -qa | grep rsyslog
+
+	软件已安装，且服务已启动
+
+	修改配置并重启
+
+	
+	# Provides UDP syslog reception
+	# for parameters see http://www.rsyslog.com/doc/imudp.html
+	module(load="imudp") # needs to be done just once
+	input(type="imudp" port="514")
+
+	# Provides TCP syslog reception
+	# for parameters see http://www.rsyslog.com/doc/imtcp.html
+	module(load="imtcp") # needs to be done just once
+	input(type="imtcp" port="514")
+	
+	配置完毕，保存退出
+
+	重启服务
+	
+	服务器 配置完毕，开始配置客户机
+
+
+
+客户端
+
+1、配置ip地址
+	
+	重启网卡命令如果找不到，可以直接重启系统，重启网卡命令不常用，总是忘记
+	客户端ip地址192.168.4.128 与配置不一致 查看原因
+	
+	BOOTPROTO=static 写错了
+
+	vmware集成dhcp服务，所以虚拟机只要网卡开启，可以自动获取动态ip地址
+
+	服务器建议使用静态分配
+
+	关闭防火墙
+	关闭selinux
+
+	配置完毕，重启服务
+
+
+开始测试
+
+	使用错误的密码尝试登陆client，多试几次。在服务器查看登陆记录
+
+
+Apr 10 07:14:23 client login[1258]: pam_unix(login:auth): authentication failure; logname=LOGIN uid=0 euid=0 tty=tty1 ruser= rhost=
+Apr 10 07:14:25 client login[1258]: FAILED LOGIN 1 FROM tty1 FOR admin, Authentication failure        admin登陆失败
+Apr 10 07:14:30 client unix_chkpwd[1261]: password check failed for user (user)
+Apr 10 07:14:30 client login[1258]: pam_unix(login:auth): authentication failure; logname=LOGIN uid=0 euid=0 tty=tty1 ruser= rhost=  user=user
+Apr 10 07:14:32 client login[1258]: FAILED LOGIN 2 FROM tty1 FOR user, Authentication failure	user登陆失败
+Apr 10 07:14:35 client unix_chkpwd[1263]: password check failed for user (ftp)
+Apr 10 07:14:35 client login[1258]: pam_unix(login:auth): authentication failure; logname=LOGIN uid=0 euid=0 tty=tty1 ruser= rhost=  user=ftp
+Apr 10 07:14:36 client login[1258]: FAILED LOGIN SESSION FROM tty1 FOR ftp, Authentication failure	ftp登陆失败
+Apr 10 07:14:49 client login[1265]: pam_unix(login:auth): check pass; user unknown
+Apr 10 07:14:49 client login[1265]: pam_unix(login:auth): authentication failure; logname=LOGIN uid=0 euid=0 tty=tty1 ruser= rhost=
+Apr 10 07:14:51 client login[1265]: FAILED LOGIN 1 FROM tty1 FOR zhangsan, Authentication failure	张三登陆失败
+Apr 10 07:14:57 client login[1265]: pam_unix(login:auth): check pass; user unknown
+Apr 10 07:14:57 client login[1265]: pam_unix(login:auth): authentication failure; logname=LOGIN uid=0 euid=0 tty=tty1 ruser= rhost=
+Apr 10 07:14:58 client login[1265]: FAILED LOGIN 2 FROM tty1 FOR admin, Authentication failure	admin登陆失败
+
+
+
+[root@server log]# cat secure | grep FAILED
+Apr 10 07:14:25 client login[1258]: FAILED LOGIN 1 FROM tty1 FOR admin, Authentication failure
+Apr 10 07:14:32 client login[1258]: FAILED LOGIN 2 FROM tty1 FOR user, Authentication failure
+Apr 10 07:14:36 client login[1258]: FAILED LOGIN SESSION FROM tty1 FOR ftp, Authentication failure
+Apr 10 07:14:51 client login[1265]: FAILED LOGIN 1 FROM tty1 FOR zhangsan, Authentication failure
+Apr 10 07:14:58 client login[1265]: FAILED LOGIN 2 FROM tty1 FOR admin, Authentication failure
+
+
+
+可以使用grep关键字直接过滤出失败的记录，结果更清晰
+
+
+
+
+Apr 10 07:18:10 client login[1269]: pam_unix(login:session): session opened for user root by LOGIN(uid=0)
+Apr 10 07:18:10 client login[1269]: ROOT LOGIN ON tty1
+
+登陆成功的记录
+
+
+实验结束
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+	
+
+	

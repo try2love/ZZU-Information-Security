@@ -1,0 +1,100 @@
+linux软件安装
+
+linux虚拟机未配置ip地址，在安装之前先配置linux虚拟机网络
+
+因物理机限制，此虚拟机使用mini方式安装，建议硬件允许使用 gui方式安装，适当调大虚拟机内存
+
+配置完网卡 重启系统，或重启网卡。
+
+ping 百度 测试网络连通性
+
+yum install net-tools vim 包
+
+来看一下什么是yum 源
+
+
+1、yum源  apt源 
+
+	mirrorlist=   后跟的就是yum的源，实际上就是一个url地址。要访问地址必须加上版本等参数。加上参数即可访问软件库。
+
+	安装dhcp服务
+
+	如果不知道要安装软件包的名字，可以使用yum search 关键字 搜索要找的软件包
+
+	安装已完成
+
+	如果要启动dhcp服务，需要配置dhcp，较麻烦 这里不再演示
+
+	查看dhcp服务状态inactive 表示未启动
+
+	启动命令systemctl start dhcpd.service
+	重启命令systemctl restart dhcpd.service
+	停止命令systemctl stop dhcpd.service
+	
+	卸载dhcp
+
+	yum remove dhcp-server
+
+2、配置jdk
+	
+	下载好的jdk包
+
+	使用工具上传至linux虚拟机 使用mobaxterm上传linux比较简单 ，建议采用此方式，已上传linux
+
+	解压缩
+
+	未配置环境变量的情况下，输入java相关命令是无法使用的。
+
+	配置linux系统环境变量，注意版本号。环境变量配置命令过长，建议搜索模板或根据以前配置直接复制
+
+	java环境已配置完成。
+
+3、使用rpm命令安装相关包
+
+	要使用rpm命令安装，需要先有相对应的软件包才行 。
+
+	vsftpd软件包 在 linux安装光盘中
+
+	mount 将光盘挂载到linux中的/mnt目录
+
+	找到对应的包后
+
+	安装完成
+
+	使用systemctl控制vsftpd命令只需要将刚才的dhcpd.service改成vsftpd.service即可。
+
+	卸载完成
+
+	注意 rpm安装后，卸载时，要输入安装后的命令，直接输入安装包的名字无法删除对应的包。
+
+	
+
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
