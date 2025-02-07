@@ -1,0 +1,20 @@
+create login adm1 with password='123456', default_database=test学生学籍管理系统
+create user adm1 for login adm1 with default_schema=dbo
+create login tec1 with password='123456', default_database=test学生学籍管理系统
+create user tec1 for login tec1 with default_schema=dbo
+create login stu1 with password='123456', default_database=test学生学籍管理系统
+create user stu1 for login stu1 with default_schema=dbo
+
+grant select,insert,delete,update on student to adm1;
+grant select,insert,delete,update on course to adm1;
+grant select,insert,delete,update on sc to adm1;--给adm1全部的权限
+grant alter to adm1;--给adm1修改表的权限
+
+grant update(grade) on sc to tec1;--教师只能够更改选课表里的成绩（后续需限制只能改自己的学生）
+grant select on sc to tec1;--教师可以增删查选课表中的内容
+grant select on student to tec1;--教师可以查询学生表的内容
+grant select on course to tec1;--教师可以查询教课表的内容
+
+grant select on student to stu1;--（同样后续应当限制只能查自己的信息）
+grant select on sc to stu1;
+grant select on course to stu1;--学生可以查询所有的表
