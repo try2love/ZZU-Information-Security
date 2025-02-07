@@ -1,0 +1,45 @@
+R1(config)#crypto isakmp policy 1
+R1(config-isakmp)#encryption aes
+R1(config-isakmp)#group 2
+R1(config-isakmp)#hash sha
+R1(config-isakmp)#authentication pre-share 
+R1(config-isakmp)#exit
+R1(config)#crypto isakmp key coderge address 200.1.1.2
+R1(config)#
+R1(config)#acc 100 permit ip 192.168.1.0 0.0.0.255 192.168.2.0 0.0.0.255
+R1(config)#crypto ipsec transform-set getran esp-aes esp-sha-hmac 
+R1(config)#
+R1(config)#
+R1(config)#crypto map gemap 1 ip
+R1(config)#crypto map gemap 1 ipsec-isakmp 
+% NOTE: This new crypto map will remain disabled until a peer
+        and a valid access list have been configured.
+R1(config-crypto-map)#set peer 200.1.1.2
+R1(config-crypto-map)#match address 100
+R1(config-crypto-map)#set transform-set getran
+R1(config-crypto-map)#exit
+R1(config)#
+R1(config)#
+R1(config)#int f0/1 
+R1(config-if)#crypto map gemap
+*Jan  3 07:16:26.785: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is ON
+
+crypto isakmp policy 2
+encryption aes
+group 2
+hash sha
+authentication pre-share 
+exit
+crypto isakmp key coderge address 100.1.1.2
+
+acc 102 permit ip 192.168.2.0 0.0.0.255 192.168.1.0 0.0.0.255
+crypto ipsec transform-set ge2tran esp-aes esp-sha-hmac 
+
+crypto map ge2map 1 ipsec-isakmp 
+set peer 100.1.1.2
+match address 102
+set transform-set ge2tran
+exit
+
+int f0/0
+crypto map ge2map
